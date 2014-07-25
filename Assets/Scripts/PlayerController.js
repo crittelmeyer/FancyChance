@@ -16,6 +16,11 @@ function Start () {
 }
 
 function Update () {
+	if (playerPhysics.movementStopped) {
+		targetSpeed = 0;
+		currentSpeed = 0;
+	}
+
 	targetSpeed = Input.GetAxisRaw("Horizontal") * speed;
 	currentSpeed = IncrementTowards(currentSpeed, targetSpeed, acceleration);
 	
